@@ -62,7 +62,11 @@ bool Player::HasWon(char** board, int size, int winning) {
 	return false;
 }
 
-bool Player::PutButton(char** board, int row, int col) {
+bool Player::PutButton(char** board, int size, char part, int k) {
+	int row, col;
+	k -= 1;
+	row = ((part == 'q' || part == 'w') ? size / 2 : size) - k / (size / 2) - 1;
+	col = ((part == 'q' || part == 'a') ? 0 : size / 2) + k % (size / 2);
 	if (board[row][col] != ' ')
 		return false;
 	board[row][col] = this->color;

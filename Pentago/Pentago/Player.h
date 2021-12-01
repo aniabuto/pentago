@@ -17,5 +17,5 @@ public:
 
 	bool HasWon(char** board, int size, int winning);
 
-	bool PutButton(char**  board, int row, int col);	//returns true if successful
+	bool PutButton(char**  board, int size, char part, int k);	//returns true if successful
 };
