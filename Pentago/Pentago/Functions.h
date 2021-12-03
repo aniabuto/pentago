@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include<iostream>
+//#include<stdlib.h>
 #include "Player.h"
 
 using namespace std;
@@ -12,41 +13,135 @@ string GetName() {
 }
 
 void DrawBoardPentago(char** board, int size) {
-	cout << "+---+---+---+  +---+---+---+\n";
-	for (int i = 0; i < size; i++)
+	system("cls");
+
+	// górna krawedz gornych cwiartek
+	cout << '\n' << char(201) << char(205) << char(205) << char(205);
+	for (int i = 0; i < size / 2 - 1; i++)
+		cout << char(203) << char(205) << char(205) << char(205);
+	cout << char(187) << "  ";
+	cout << char(201) << char(205) << char(205) << char(205);
+	for (int i = size/2; i < size - 1; i++)
+		cout << char(203) << char(205) << char(205) << char(205);
+	cout << char(187) << "\n";
+
+	// gorne cwiartki
+	for (int i = 0; i < size / 2 - 1; i++)
 	{
-		cout << '|';
+		cout << char(186);
 		for (int j = 0; j < size; j++)
 		{
-			cout << ' ' << board[i][j] << " |";
-			if (j == 2)
-				cout << "  |";
+			cout << ' ' << board[i][j] << " " << char(186);
+			if (j == size / 2 - 1)
+				cout << "  " << char(186);
 		}
-		cout << "\n+---+---+---+  +---+---+---+\n";
-		if (i == 2)
-			cout << "\n+---+---+---+  +---+---+---+\n";
+		cout << '\n' << char(204) << char(205) << char(205) << char(205);
+		for (int i = 0; i < size / 2 - 1; i++)
+			cout << char(206) << char(205) << char(205) << char(205);
+		cout << char(185) << "  ";
+		cout << char(204) << char(205) << char(205) << char(205);
+		for (int i = size / 2; i < size - 1; i++)
+			cout << char(206) << char(205) << char(205) << char(205);
+		cout << char(185) << "\n";
 	}
+	// dolna krawedz gornych cwiartek
+	cout << char(186);
+	for (int j = 0; j < size; j++)
+	{
+		cout << ' ' << board[size / 2 - 1][j] << " " << char(186);
+		if (j == size / 2 - 1)
+			cout << "  " << char(186);
+	}
+	cout << '\n' << char(200) << char(205) << char(205) << char(205);
+	for (int i = 0; i < size / 2 - 1; i++)
+		cout << char(202) << char(205) << char(205) << char(205);
+	cout << char(188) << "  ";
+	cout << char(200) << char(205) << char(205) << char(205);
+	for (int i = size / 2; i < size - 1; i++)
+		cout << char(202) << char(205) << char(205) << char(205);
+	cout << char(188) << "\n";
+	
+	// gorne cwiartki
+	// górna krawedz gornych cwiartek
+	cout << '\n' << char(201) << char(205) << char(205) << char(205);
+	for (int i = 0; i < size / 2 - 1; i++)
+		cout << char(203) << char(205) << char(205) << char(205);
+	cout << char(187) << "  ";
+	cout << char(201) << char(205) << char(205) << char(205);
+	for (int i = size / 2; i < size - 1; i++)
+		cout << char(203) << char(205) << char(205) << char(205);
+	cout << char(187) << "\n";
+
+	// gorne cwiartki
+	for (int i = size / 2; i < size - 1; i++)
+	{
+		cout << char(186);
+		for (int j = 0; j < size; j++)
+		{
+			cout << ' ' << board[i][j] << " " << char(186);
+			if (j == size / 2 - 1)
+				cout << "  " << char(186);
+		}
+		cout << '\n' << char(204) << char(205) << char(205) << char(205);
+		for (int i = 0; i < size / 2 - 1; i++)
+			cout << char(206) << char(205) << char(205) << char(205);
+		cout << char(185) << "  ";
+		cout << char(204) << char(205) << char(205) << char(205);
+		for (int i = size / 2; i < size - 1; i++)
+			cout << char(206) << char(205) << char(205) << char(205);
+		cout << char(185) << "\n";
+	}
+	// dolna krawedz gornych cwiartek
+	cout << char(186);
+	for (int j = 0; j < size; j++)
+	{
+		cout << ' ' << board[size - 1][j] << " " << char(186);
+		if (j == size / 2 - 1)
+			cout << "  " << char(186);
+	}
+	cout << '\n' << char(200) << char(205) << char(205) << char(205);
+	for (int i = 0; i < size / 2 - 1; i++)
+		cout << char(202) << char(205) << char(205) << char(205);
+	cout << char(188) << "  ";
+	cout << char(200) << char(205) << char(205) << char(205);
+	for (int i = size / 2; i < size - 1; i++)
+		cout << char(202) << char(205) << char(205) << char(205);
+	cout << char(188) << "\n";
 	cout << '\n';
+
 }
 
 void DrawBoardTicTacToe(char** board, int size) {
-	cout << "\n";
-	for (int j = 0; j < size; j++)
-		cout << "+---";
-	cout << "+\n";
+	cout << "\n" << char(201) << char(205) << char(205) << char(205);
+	for (int j = 0; j < size - 1; j++)
+		cout << char(203) << char(205) << char(205) << char(205);
+	cout << char(187) << "\n";
 	
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < size - 1; i++)
 	{
-		cout << '|';
+		cout << char(186);
 		for (int j = 0; j < size; j++)
 		{
-			cout << ' ' << board[i][j] << " |";
+			cout << ' ' << board[i][j] << " " << char(186);
 		}
 		cout << "\n";
-		for (int j = 0; j < size; j++)
-			cout << "+---";
-		cout << "+\n";
+		cout << char(204) << char(205) << char(205) << char(205);
+		for (int j = 0; j < size - 1; j++)
+			cout << char(206) << char(205) << char(205) << char(205);
+		cout <<char(185) << "\n";
 	}
+	cout << char(186);
+	for (int j = 0; j < size; j++)
+	{
+		cout << ' ' << board[size - 1][j] << " " << char(186);
+	}
+	cout << "\n";
+	cout << char(200) << char(205) << char(205) << char(205);
+	for (int j = 0; j < size - 1; j++)
+		cout << char(202) << char(205) << char(205) << char(205);
+	cout << char(188) << "\n";
+
+
 	cout << '\n';
 }
 
@@ -109,7 +204,7 @@ bool MoveTicTacToe(char** board, int size, Player* player, int winning) {
 		cin >> move;
 		char part = move[0];
 		int k = move[1] - '0';
-		if (k != 0 && (part == 'q' || part == 'w' || part == 'a' || part == 's'))
+		if (move[2] == '\0' && k != 0 && (part == 'q' || part == 'w' || part == 'a' || part == 's'))
 			put = player->PutButton(board, size, part, k);
 		else
 			cout << "Zly input\n";
@@ -142,17 +237,19 @@ bool MovePentago(char** board, int size, Player* player, int winning) {
 			// undo
 			;
 		else {
-			char part = move[0];
-			int k = move[1] - '0';
-			if (k != 0 && (part == 'q' || part == 'w' || part == 'a' || part == 's'))
-				put = player->PutButton(board, size, part, k);
-			else
-				cout << "Zly input\n";
+			if (!put) {
+				char part = move[0];
+				int k = move[1] - '0';
+				if (move[2] == '\0' && k != 0 && k<=9 && (part == 'q' || part == 'w' || part == 'a' || part == 's'))
+					put = player->PutButton(board, size, part, k);
+				else
+					cout << "Zly input\n";
+			}
 			if (put) {
 				DrawBoardPentago(board, size);
 				while (!rotate) {
 					cin >> move;
-					part = move[0];
+					char part = move[0];
 					char direction = move[1];
 					if ((direction == 'z' || direction == 'x') && (part == 'q' || part == 'w' || part == 'a' || part == 's')) {
 						Rotate(board, size, part, direction);

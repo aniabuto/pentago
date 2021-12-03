@@ -27,6 +27,7 @@ bool Player::HasWon(char** board, int size, int winning) {
 		for (int j = 0; j < size; j++)
 			if (board[i][j] == this->color)
 				mine++;
+
 		if (mine == winning)
 			return true;
 	}

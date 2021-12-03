@@ -14,9 +14,10 @@ int main()
 	two->SetColor('o');
 
 	cout << "First player's name: \"" << one->GetName() << "\" and color: \"" << one->GetColor() << '\"';
-	cout << "\nSecond player's name: \"" << two->GetName() << "\" and color: \"" << two->GetColor() << '\"';
+	cout << "\nSecond player's name: \"" << two->GetName() << "\" and color: \"" << two->GetColor() << "\"\n\n";
 
-	int size = 6;
+	int size = 10;
+	
 	char** board = new char*[size];
 	for (int i = 0; i < size; i++) {
 		board[i] = new char[size];
@@ -31,7 +32,7 @@ int main()
 	//	for (int j = 0; j < size; j++)
 	//		board[i][j] = (i + j) % 2 == 0 ? 'o' : 'x';
 	//*/
-	GameTicTacToe(board, size, winning, one, two);
+	GamePentago(board, size, winning, one, two);
 
 
 	//board[3][3] = '1';
